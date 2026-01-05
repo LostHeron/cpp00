@@ -12,12 +12,27 @@
 
 NAME := megaphone
 
-CC := c++
-CFLAGS := -Wall -Wextra -Werror -std="c++98" 
+CXX := c++
+CXXFLAGS := -Wall -Wextra -Werror -std="c++98" 
 
-CPP_FILES := megaphone.cpp
+CXX_FILES := megaphone.cpp
+CXX_OBJ := $(CXX_FILES:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(CPP_FILES)
-	$(CC) $(CFLAGS) $^ -o $@
+$(NAME): $(CXX_OBJ)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
+%.o:%.c
+	$(CXX) $(CXXFLAGS) -c $< -o $@ 
+
+clean:
+	rm -f $(CXX_OBJ)
+
+fclean:
+	$(MAKE) clean
+	rm -f $(NAME)
+
+re:
+	$(MAKE) fclean
+	$(MAKE) all
