@@ -85,15 +85,15 @@ int	cmd_add(PhoneBook& phonebook)
 	if (ret != SUCCESS)
 		return (ret);
 
-	ret = get_input( "Enter contact nickname name: ", new_contact.get_nickname_ref());
+	ret = get_input( "Enter contact nickname: ", new_contact.get_nickname_ref());
 	if (ret != SUCCESS)
 		return (ret);
 
-	ret = get_input( "Enter contact phone number name: ", new_contact.get_phone_number_ref());
+	ret = get_input( "Enter contact phone number: ", new_contact.get_phone_number_ref());
 	if (ret != SUCCESS)
 		return (ret);
 
-	ret = get_input("Enter contact darkest secret name: ", new_contact.get_darkest_secret_ref());
+	ret = get_input("Enter contact darkest secret: ", new_contact.get_darkest_secret_ref());
 	if (ret != SUCCESS)
 		return (ret);
 
