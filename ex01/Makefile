@@ -25,6 +25,7 @@ CXX_OBJECTS_FILES := $(addprefix $(CXX_OBJECTS_DIR),$(CXX_FILES:.cpp=.o))
 
 CXX_DEPS := $(CXX_OBJECTS_FILES:.o=.d)
 
+.PHONY: all clean fclean re
 
 all: $(NAME)
 

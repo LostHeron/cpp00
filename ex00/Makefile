@@ -18,6 +18,8 @@ CXXFLAGS := -Wall -Wextra -Werror -std="c++98"
 CXX_FILES := megaphone.cpp
 CXX_OBJ := $(CXX_FILES:.cpp=.o)
 
+.PHONY : all clean fclean re
+
 all: $(NAME)
 
 $(NAME): $(CXX_OBJ)
