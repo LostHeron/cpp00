@@ -34,7 +34,7 @@ $(NAME): $(CXX_OBJECTS_FILES)
 -include $(CXX_DEPS)
 
 $(CXX_OBJECTS_DIR)%.o : %.cpp | $(CXX_OBJECTS_DIR)
-	$(CXX) $(CXXFLAGS) -c $^ -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(CXX_OBJECTS_DIR):
 	mkdir -p $@

@@ -44,12 +44,17 @@ std::ostream& operator<<(std::ostream& os, PhoneBook phonebook)
 		os.width(10);
 		os << i + 1;
 		os << "|";
-		os << phonebook.contacts_list[i];
+		os << phonebook.get_contact_i(i);
 		std::cout << std::endl;
 	}
 	std::cout << std::setw(45) << std::setfill('-') << "\n";
 	std::cout << std::setfill(' ');
 	return (os);
+}
+
+Contact&	PhoneBook::get_contact_i(int i)
+{
+	return (this->contacts_list[i]);
 }
 
 int	PhoneBook::size(void)

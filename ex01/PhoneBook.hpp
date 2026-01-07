@@ -27,15 +27,15 @@
 
 class PhoneBook
 {
-	public:
-		Contact contacts_list[MAX_CONTACTS];
 	private:
+		Contact contacts_list[MAX_CONTACTS];
 		int		last_contact_index;
 		int		nb_contact;
 
 	public:
-		void	add_contact(Contact contact);
-		int		size(void);
+		Contact&	get_contact_i(int i);
+		void		add_contact(Contact contact);
+		int			size(void);
 		PhoneBook();
 };
 

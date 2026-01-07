@@ -148,13 +148,14 @@ int	cmd_search(PhoneBook& phonebook)
 	}
 	if (1 <= id && id <= phonebook.size())
 	{
-		print_contact(phonebook.contacts_list[id - 1]);
+		print_contact(phonebook.get_contact_i(id - 1));
 	}
 	else
 	{
 		std::cout << std::endl << "error: " << id << " is not a valid id" << std::endl;
 	}
 	return (SUCCESS);
+
 }
 
 int	check_entered_id(int& id, std::string& str)
