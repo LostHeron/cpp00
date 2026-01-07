@@ -12,7 +12,7 @@
 
 NAME := a.out
 CXX := c++
-CXXFLAGS := -std="c++98" -Wall -Wextra -Werror 
+CXXFLAGS := -std="c++98" -Wall -Wextra -Werror  -MMD -MP
 
 CXX_SOURCE_FILES := Account.cpp \
 					tests.cpp \
@@ -20,10 +20,14 @@ CXX_SOURCE_FILES := Account.cpp \
 OBJECTS_DIR := .obj/
 OBJECTS_FILES := $(addprefix $(OBJECTS_DIR), $(CXX_SOURCE_FILES:.cpp=.o))
 
+DEPS_FILES := $(OBJECTS_FILES:.o=.d)
+
 all: $(NAME)
 
 $(NAME) : $(OBJECTS_FILES)
 	$(CXX) $(CXXFLAGS) $^ -o $@
+
+-include $(DEPS_FILES)
 
 $(OBJECTS_DIR)%.o : %.cpp | $(OBJECTS_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
